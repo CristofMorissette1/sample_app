@@ -6085,3 +6085,57 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 27ms (Views: 26.1ms | ActiveRecord: 0.1ms | Allocations: 19636)
 
 
+Started GET "/login" for ::1 at 2019-09-11 15:38:25 -0600
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 247.8ms | Allocations: 72567)
+  Rendered layouts/_rails_default.html.erb (Duration: 2681.2ms | Allocations: 1417807)
+  Rendered layouts/_shim.html.erb (Duration: 2.5ms | Allocations: 95)
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:40:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 14.9ms | Allocations: 3136)
+  Rendered layouts/_footer.html.erb (Duration: 2.7ms | Allocations: 185)
+Completed 200 OK in 2973ms (Views: 2956.9ms | ActiveRecord: 3.1ms | Allocations: 1497128)
+
+
+Started GET "/password_resets/new" for ::1 at 2019-09-11 15:38:30 -0600
+Processing by PasswordResetsController#new as HTML
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 87)
+  Rendered layouts/_rails_default.html.erb (Duration: 25.5ms | Allocations: 18358)
+  Rendered layouts/_shim.html.erb (Duration: 0.0ms | Allocations: 5)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:40:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 671)
+  Rendered layouts/_footer.html.erb (Duration: 0.1ms | Allocations: 49)
+Completed 200 OK in 36ms (Views: 33.0ms | ActiveRecord: 0.2ms | Allocations: 20668)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddResetToUsers (20190911214116)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_digest" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_sent_at" datetime[0m
+  [1m[36mprimary::SchemaMigration Create (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190911214116"]]
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/password_resets/new" for ::1 at 2019-09-11 15:43:48 -0600
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PasswordResetsController#new as HTML
+  Rendering password_resets/new.html.erb within layouts/application
+  Rendered password_resets/new.html.erb within layouts/application (Duration: 162.5ms | Allocations: 71882)
+  Rendered layouts/_rails_default.html.erb (Duration: 1550.2ms | Allocations: 1383692)
+  Rendered layouts/_shim.html.erb (Duration: 0.8ms | Allocations: 95)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 101], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:40:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 12.9ms | Allocations: 3213)
+  Rendered layouts/_footer.html.erb (Duration: 0.6ms | Allocations: 185)
+Completed 200 OK in 1745ms (Views: 1736.4ms | ActiveRecord: 1.1ms | Allocations: 1462408)
+
+
